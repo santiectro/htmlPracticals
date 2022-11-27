@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Button from '../components/Button';
 import TextInput from '../components/TextInput';
+import axios from "axios"
+
+
 const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -39,7 +42,13 @@ const RegisterPage = () => {
     if (isFormValid()) {
       // submit the form
     }
-    // console.log(email, password);
+    const result = axios.post("http://localhost:3000/register", {
+      name,
+      email,
+      password,
+    });
+
+    console.log({result})
   };
 
   return (

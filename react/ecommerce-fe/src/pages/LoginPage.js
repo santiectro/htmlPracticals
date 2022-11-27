@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import Button from '../components/Button';
-import TextInput from '../components/TextInput';
+import { useState } from "react";
+import axios from "axios";
+import Button from "../components/Button";
+import TextInput from "../components/TextInput";
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
   // axios
 
@@ -14,18 +15,18 @@ const LoginPage = () => {
   const isFormValid = () => {
     let isValid = true;
 
-    if (email == '') {
+    if (email == "") {
       isValid = false;
-      errors.email = 'Invalid email';
+      errors.email = "Invalid email";
     } else {
-      errors.email = '';
+      errors.email = "";
     }
 
-    if (password == '') {
+    if (password == "") {
       isValid = false;
-      errors.password = 'Invalid password';
+      errors.password = "Invalid password";
     } else {
-      errors.password = '';
+      errors.password = "";
     }
 
     setErrors({ ...errors });
@@ -38,6 +39,12 @@ const LoginPage = () => {
       // submit the form
     }
     // console.log(email, password);
+    const result = axios.post("http://localhost:3000/login", {
+      email,
+      password,
+    });
+
+    console.log({result})
   };
 
   return (
@@ -45,9 +52,9 @@ const LoginPage = () => {
       <form onSubmit={handleSubmit}>
         <h3>Login</h3>
         <TextInput
-          name='email'
-          type='text'
-          placeholder='Enter email'
+          name="email"
+          type="text"
+          placeholder="Enter email"
           error={errors.email}
           value={email}
           onChange={(event) => {
@@ -55,9 +62,9 @@ const LoginPage = () => {
           }}
         />
         <TextInput
-          name='password'
-          type='password'
-          placeholder='Enter password'
+          name="password"
+          type="password"
+          placeholder="Enter password"
           error={errors.password}
           value={password}
           onChange={(event) => {
@@ -65,7 +72,7 @@ const LoginPage = () => {
           }}
         />
 
-        <Button type='submit' label={'Submit'} />
+        <Button type="submit" label={"Submit"} />
       </form>
     </>
   );
