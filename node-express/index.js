@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors'
 import { connect } from './mongo';
 import { create, get } from './controllers/product';
 import { login, register } from './controllers/auth';
@@ -7,6 +8,9 @@ const app = express();
 const PORT = 3000;
 app.use(bodyParser.json());
 connect();
+app.use(cors('*'));
+
+
 
 app.post('/login', async (req, res) => {
   try {
@@ -28,12 +32,15 @@ app.post('/register', async (req, res) => {
   }
 });
 
-app.post('/login', async (req, res) => {});
-
 app.post('/products', async (req, res) => {
-  const body = req.body;
-  const result = await create(body);
-  res.json(result);
+  try {
+    const body = req.body;
+    const result = await create(body);
+    res.json(result);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+  
 });
 
 app.get('/products', async (req, res) => {
