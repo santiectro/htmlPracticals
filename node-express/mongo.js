@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 const url =
-  'mongodb+srv://demo:demo123@cluster0.w3cje.mongodb.net/?retryWrites=true&w=majority';
+  'mongodb+srv://santi:123@cluster0.jfhewje.mongodb.net/?retryWrites=true&w=majority';
 
 export const connect = () => {
   mongoose
