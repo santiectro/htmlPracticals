@@ -16,3 +16,19 @@ export const get = async () => {
 
   return result;
 };
+
+export const getOne = async (id) => {
+  const result = await Product.findById(id);
+
+  return result;
+};
+
+export const remove = async(id) => {
+  const result = await Product.findByIdAndDelete(id)
+  return result
+}
+
+export const update = async(id, data) => {
+  const result = await Product.findByIdAndUpdate(id, data)
+  return result
+}

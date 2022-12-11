@@ -53,7 +53,8 @@ const RegisterPage = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+    <div className="login">
+      <form onSubmit={handleSubmit} className="login-form">
         <h3>Register</h3>
         <TextInput
           name='name'
@@ -88,6 +89,7 @@ const RegisterPage = () => {
 
         <Button type='submit' label={'Submit'} />
       </form>
+    </div>
     </>
   );
 };

@@ -49,31 +49,33 @@ const LoginPage = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h3>Login</h3>
-        <TextInput
-          name="email"
-          type="text"
-          placeholder="Enter email"
-          error={errors.email}
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
-        <TextInput
-          name="password"
-          type="password"
-          placeholder="Enter password"
-          error={errors.password}
-          value={password}
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        />
+      <div className="login">
+        <form onSubmit={handleSubmit} className="login-form">
+          <h3>Login</h3>
+          <TextInput
+            name="email"
+            type="text"
+            placeholder="Enter email"
+            error={errors.email}
+            value={email}
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+          <TextInput
+            name="password"
+            type="password"
+            placeholder="Enter password"
+            error={errors.password}
+            value={password}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
 
-        <Button type="submit" label={"Submit"} />
-      </form>
+          <Button type="submit" label={"Submit"} />
+        </form>
+      </div>
     </>
   );
 };

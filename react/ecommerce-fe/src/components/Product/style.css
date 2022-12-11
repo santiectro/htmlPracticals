@@ -1,7 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@400;500;700&family=Inter:wght@400;700&display=swap');
+
+html, body {
+    font-family: 'Anek Devanagari', sans-serif;
+    margin : 0;
+}
+
+ul, li {
+    margin : 0;
+    color: black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+
+li:hover{
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    background-color: #83C1A6;
+    font-size: bold;
+    box-sizing: border-box;
+    color: white;
+}
+
+li {
+    padding: .7em 1em;
+}
+
+ul { 
+    display: flex;
+    padding: .5em .5em;
+    justify-content: space-between;
+    background-color: #E2E8E7; 
+    color: black;
+}
+
+
 .productContainer {
     border: 1px solid grey;
+    margin-top: 0;
+}
+
+.overall-div-lol  {
+    width: 90%;
+    margin: 1em auto;
+    display: grid;
+    grid-template: 320px/ 1fr 1fr 1fr;
+    gap: 1em;
+    box-sizing: border-box;
+}
+
+
+img {
+    height: 200px;
+    width: 100%;
+}
+
+/* 
+
+p {
+    text-align: left;
+    display: inline-block;
+}
+
+h3 {
+    text-align: left;
+    display: inline-block;
+    color: blue;
+} */
+
+
+.price, h3 {
+    color: black; 
+    margin: .5em;
+    font-weight:500;   
+}
+
+.info {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+}
+
+p { 
+    font-weight: 300;
+    margin: .5em;
+    color: #A09292;
+}
+
+.delete-btn {
+    float: right;
+    display: inline-block;
+    margin: .5em;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+footer {
+    text-align: center;
+}
+
+.create-form {
+    margin: 0 auto;
+    width: auto;
+    background-image: url('../../../wallpaper.jpg');
+    background-position: center;
+    height: 87vh;
+    box-sizing: border-box;
+}
+
+form {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-44%);
+    width: 300px;
+    background-color: #403F5E;
+    opacity: 0.9;
+    padding: 2.4em 1.4em;
+    border-radius: 15px;
+}
+
+.their-own {
+    text-align: center;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+    align-self: center;
+}
+.create-form label  {
+    text-align: left;
+    color: #FBD1D0
+}
+
+.create-form h3 {
+    margin: 0 0 1em;
+    text-align: center;
+    color: #FAC7C9
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+    padding: .5em;
+    margin-bottom: .6em;
+}
+
+#product-image {
+    padding:  .5em 0;
+}
+
+.login{
+    background-image: url('../../../login.png');
+    background-size:cover;
+    height: 87vh;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: auto;
+    background-repeat: no-repeat;
+}
+
+.login-form {
+    background-color: #0f264c;
+    box-shadow: 2px 2px 10px black;
+    opacity: 0.9;
+    padding: 1em 4em;
+    box-sizing: border-box;
+    height: 40%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+
+.login-form h3 {
+    color: white;
+}
+
+.login-form input {
+    background-color: #0f264c;
+    border-bottom: #fff 2px solid;
+    border-radius: 0;
+    width: 80%;
+}
+
+.login-form button {
+    width: 87%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.login-form input:focus {
+    border: none;
+}
+
+
+#image-preview {
+    width: 300px;
+    height: 150px;
+    border: 2px solid #dddddd;
+    margin-top: 15px;
+}
+
+.no-products {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.no-products a{
+    padding: 0.5em 1em;
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+}
+
+.no-products a:hover{
+    background-color:#FBD1D0;
+    color: #0f264c;
+
 }

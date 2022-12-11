@@ -1,5 +1,5 @@
 import './textInput.css';
-const TextInput = ({ name, type, placeholder, error, value, onChange }) => {
+const TextInput = ({ name, type, placeholder, error, value, onChange, id }) => {
   return (
     <div className='textInputContainer'>
       <input
@@ -8,6 +8,7 @@ const TextInput = ({ name, type, placeholder, error, value, onChange }) => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        id={id}
       />
       <div className='error'>{error}</div>
     </div>
